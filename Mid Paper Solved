@@ -1,0 +1,299 @@
+Question # 1: Match the C++ statements with the type of error:
+1. cout "Hello"; - Ans: a. Missing operator (<<)
+2. cin << a; - Ans: b. Wrong direction of extraction
+3. int 2num = 5; - Ans: c. Invalid identifier name
+4. cout << "Hello\World; - Ans: d. Missing quotation mark
+5. if(x>0); cout<<"Yes"; - Ans: e. Logical error (Semicolon after it)
+6. cout << a + b >> c; - Ans: f. Invalid operator usage
+
+Q2 — Write the Output of conditional statements:
+     True/False:
+1. (14 > 6) - Ans: True
+2. (12 >= 11) - Ans: True
+3. !(a == b) - Ans: It will be True if a is not equal to b. It will be False if a is equal to b.
+4. (12%3 == 0 || 12%5 == 0) → 12%3 == 0 is true, 12%5 == 0 is false - Ans: True
+5. a = 10, b = 20, c = 15; (a > b && a > c) → 10 > 20 is false - Ans: False
+6. (10 != 5*2) → 5*2 = 10 so 10 != 10 - Ans: False
+
+Q3 — Which data type, will you select for the following values:
+1.	“25.75” - Ans: string 
+2.	23 - Ans: int
+3.	‘A’ - Ans: char
+4.	“Ali” - Ans: string
+
+Question # 4: Trace output for thr following programs.
+1.	int main() {
+            cout << "Hello\tWorld\n";
+            cout << "C++\\Program\nming";
+            cout << "C++\bProgramm\bing";
+}
+Output:
+         Hello    World
+        C++\Program
+        mingC+Programing
+
+2.	int main() {
+            int a = 10, b = 4;
+            cout << a % b;
+}
+Output:
+               2
+
+3.	int main() {
+            int x = 3;
+            x = x + 4;
+            cout << x + 2;
+}
+Output:
+             9
+
+4.	int main() {
+            int a = 2.3;
+            cout << a;
+}
+Output:
+              2
+
+5.	int main() {
+          int x = 3, y = 4, z = 5;
+          if (x > y)
+          z += x;
+          else if (y > z)
+          z = z - y;
+          else
+        z = z + 2;
+        cout << z;
+}
+Output:
+               7
+
+6.	int main() {
+           int age;
+           cout << "Enter age: ";
+           cin >> age;
+           cout << "Your age is " << age;
+           return 0;
+}
+Output:
+           Enter age: Your age is 21
+
+7.	int main() {
+           if (a > 5)
+           cout << "A";
+           cout << "B";
+}
+Output:
+           Eroor 
+
+8.	int main() {
+            int x = 2, y = 3, z = 4;
+            cout << x + y * z / x;
+}
+Output:
+              8
+
+9.	 int main() {
+             int a = 5, b = 10;
+            cout << (a > b ? a : b);
+}
+Output:
+             10
+
+10.	 int main() {
+             int x = 2, y = 3;
+             cout << ( (x + 1 * y + 1) + (y - 1) );
+}
+Output:
+                8
+
+11.	  int main()
+{
+      float Irate 10.5; 
+      cout<<irate;
+}
+Output: 
+            10.5
+
+12.	 int main()
+{
+     if (a=5) 
+     {cout << "Five";}
+}
+Output:
+               Five
+(Explanation: assignment a 5 yields non-zero true. Note: as shown this requires a declared; otherwise it's a compile error.)
+
+13.	 int main()
+{ 
+     int a; 
+     cout << a;
+}
+
+Output: 
+              Garbage value (uninitialized variable undefined behaviour)
+
+14.	 int main()
+{ 
+    cout << "She said "Hello"";
+}
+Output:
+           Compile-time error (incorrect nested quotes-must escape inner quotes or use 17
+
+15.	 int main()
+{ 
+     int = 5; 
+}
+Output: 
+           Compile-time error (missing variable name)
+
+16.	 int main()
+{ 
+     int num = "5"; 
+}
+Output: 
+          Compile-time error (cannot assign string literal to int)
+
+17.	 int main()
+{
+    cout << "Area"; 
+    cout << 3.14*r*r;
+}
+Output: 
+            Compile-time error (identifier r is undefined/undeclared)
+
+18.	  int main()
+{
+      if (x > 0) { cout << "Positive";}
+}
+Output: 
+Depends on x. If x is declared and >0 Positive. As written (no declaration) compile error/undeclared variable.
+
+19.	 int main()
+{ 
+     cin << number; 
+     if (number 10) 
+     cout << "Equal"; 
+}
+Output: 
+Two issues: cin << number; is wrong operator (should be cin >> number;). If corrected and user inputs 10 prints Equal; otherwise prints nothing.
+
+20.	 int main()
+{
+    if (x <5&& x>2) 
+    cout << "Range";
+}
+Output: 
+Prints Range when x is greater than 2 and less than 5 (i.e. 3 or 4 for integer x). Otherwise nothing. (If x not declared compile error.)
+
+21.	 int main()
+{ 
+     int result = 10/2*;
+}
+Output: 
+Compile-time error (incomplete expression/syntax error)
+
+22.	 int main()
+{ 
+    cout <<1+4>>7; 
+}
+Output: 
+               0
+(Explanation: 1+4>> 7 is evaluated as (1+4) >>7+5 >>7+0.)
+
+23.	 int main()
+{
+     cout << "Path: C:\newfolder"; 
+}
+Output:
+          Path: C:
+          ewfolder
+(Explanation: \n is an escape for newline- so C:\newfolder becomes C: then newline then ewfolder.)
+
+Questioj # 5: Short question answers (1-14).
+
+1.	 Difference between cin and cout in C++
+cin reads input from standard input (keyboard) into variables (uses extraction >>), cout writes output to standard output (screen) using insertion <<.
+
+2.	 What happens if user inputs wrong data type using cin?
+cin fails and sets the stream into a fail state (cin.fail() becomes true). The variable is not assigned properly; subsequent I/O is ignored until the error state is cleared (e.g., cin.clear() and flushing the bad input). This can lead to unexpected behavior.
+
+3.	 Differentiate between float and double
+Both store floating-point numbers. float is typically 32-bit (#7 decimal digits precision). double is typically 64-bit (#15 decimal digits precision) - more precise and preferred for most calculations.
+
+4.	 What happens if you use an uninitialized variable in an expression?
+Behavior is undefined. For built-in types, it typically yields an indeterminate/garbage value and may produce unpredictable results or runtime bugs.
+
+5.	 What is an escape sequence in C++ and why is it needed?
+An escape sequence starts with a backslash (\) followed by a specific character. For example, \n (newline), \t (tab), or \" (double quote). They are needed to represent characters that cannot be typed directly into a string.
+
+6.	 Why not just press Enter inside a string to create a new line instead of using \n?
+String literals cannot contain raw unescaped newline characters (it would break the literal across lines and cause a compile error). Use \n or string concatenation or raw string literals (R"(multi-line)") to create line breaks.
+
+7.	 Purpose of the modulus (%) operator
+The % operator returns the remainder of integer division. For example, 7 % 3 results in 1. It is commonly used for parity checks (checking if a number is even or odd) or cyclic tasks.
+
+8.	 Can else be used without preceding if? Explain.
+No. else must follow an if (or else if) and is attached to the nearest unmatched if. Using else alone is a syntax error.
+
+9.	 Can else be used without preceding if? Explain.
+No. else must follow an if (or else if) and is attached to the nearest unmatched if. Using else alone is a syntax error.
+
+10.	 What happens if you end an if condition with a semicolon?
+if (cond); /..../) means the if controls an empty statement (the semicolon). The block that follows executes unconditionally. This is usually a logical bug.
+
+11.	 Difference between and = operators
+= is the assignment operator (stores right-hand value into left-hand variable). == is the equality comparison operator (tests whether two values are equal, returns true/false).
+
+12.	Can you combine multiple relational conditions in one expression? Give example.
+Yes-using logical operators &&, ||, !. Example: if (x > 0 &&x10) (...) (true when x is between 1 and 9).
+
+13.	 What happens when operators have the same precedence?
+If operators have the same precedence, evaluation order is determined by associativity (left-to-right or right-to-left). For example, a-b-cis (ab) c (left-associative).
+
+14.	 General syntax of the ternary operator and its components
+Syntax: condition? expression_if true: expression_if_false
+It evaluates condition; if true it yields expression_if_true, otherwise    expression_if_false.
+Often used as a short if-else for value selection.
+
+15.	 Naming rules for identifiers in C++
+Must start with a letter (A-Z, a-z) or underscore (cannot start with a digit).
+After first character may contain letters, digits, or underscores.
+No spaces or punctuation.
+Cannot use C++ reserved keywords (like int, for, class, etc.).
+Identifiers are case-sensitive (Value value).
+
+Question # 6: C++ program.
+Here is a simple, correct C++ program that implements the requested behavior:
+
+#include <iostream>
+using namespace std;
+int main() {
+    int year;
+    cout << "Enter year: ";
+
+    if (!(cin >> year)) {
+        cout << "Invalid input\n";
+        return 0;
+    }
+
+    if (year >= 2000 && year <= 2015) {
+        int sum = 2000 + 2015;
+        cout << "Year is between 2000 and 2015 (inclusive).\n";
+        cout << "Sum of 2000 and 2015 = " << sum << '\n';
+    }
+    else if (year >= 2016 && year <= 2025) {
+        int sum = 2016 + 2025;
+        cout << "Year is between 2016 and 2025 (inclusive).\n";
+        cout << "Sum of 2016 and 2025 = " << sum << "\n";
+    }
+    else {
+        cout << "Year is not in the range.\n";
+        return 0;
+    }
+
+    return 0;
+}
+
+
+
+
